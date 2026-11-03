@@ -17,7 +17,13 @@ Trop de choix, peur de se tromper, café de supermarché sans goût.
 | Peur de mal préparer | Comptoir de préparation : dose, eau, température, mouture, durée, extraction animée |
 | Hésitation à s'engager | Abonnement sans engagement, boîte qui se remplit, étiquette de sachet à votre nom, prix et économie en direct |
 
-Une seule action principale, « Je m'abonne » : barre du haut, en-tête, fin de l'en-tête, pied de page.
+Une seule action principale, « Je m'abonne », qui mène à une page dédiée.
+
+## Parcours de vente : une vitrine, un tunnel
+- **Vitrine (`index.html`)** : raconte et rassure. Ordre pensé pour convaincre vite : accueil, bandeau de rassurance (sans engagement, torréfié à la commande, envoi sous 48 h, note d'exemple), savoir-faire, trois cafés, « comment ça marche » en trois gestes, avis, puis le récit du grain à la tasse et les outils d'aide au choix (roue, quiz, origines, comptoir). Un appel à l'action revient après chaque bloc fort, avec le prix (9,90 €) et la promesse (sans engagement).
+- **Tunnel (`abonnement.html`)** : une page sans distraction, uniquement pour s'abonner. En-tête allégé avec une barre d'étapes qui avance toute seule (1. Formule, 2. Votre boîte, 3. Coordonnées), carton interactif et total collants pendant la saisie, formulaire minimal (prénom, e-mail), pastille « Le plus choisi » sur la formule à deux sachets, rassurance sous le bouton, mini-FAQ et avis avant de valider, écran de confirmation avec les trois prochaines étapes datées.
+- **Rétention :** « Je le choisis » sur un café, ou dans la fiche et le quiz, préremplit le carton de la page d'abonnement. La composition est mémorisée dans le navigateur (stockage local, jamais envoyée) : au retour, on propose de la reprendre, et la touche de la barre devient « Reprendre ma boîte ».
+- **Transition :** les trois nappes cuivre recouvrent l'écran depuis le clic, la page change, elles se retirent.
 
 ## Direction artistique : la torréfaction de nuit, en plat sobre
 - **Parti pris :** torréfaction de nuit, cases néo-brutalistes, accent cuivre. Chaque café a son propre monde de couleur, tiré de son paquet : vert sauge, terracotta, bleu nuit.
@@ -60,7 +66,7 @@ Références de motifs : fiche de dégustation et courbe SVG qui se dessine au d
 ## Mesures (Lighthouse, ordinateur, serveur local)
 | Performance | Accessibilité | Bonnes pratiques | SEO | Décalage |
 |---|---|---|---|---|
-| 90 à 98 | 100 | 100 | 100 | 0,03 |
+| Accueil : 97 / Abonnement : 99 | 100 / 100 | 100 | 100 | 0,08 / 0,06 |
 
 Poids transféré : environ 470 Ko. Animations de défilement limitées à `transform`, `opacity` et `clip-path`, sans bibliothèque. Les sections sous l'écran utilisent `content-visibility`, la carte en grains se dessine à l'approche.
 
