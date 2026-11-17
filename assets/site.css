@@ -852,7 +852,7 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;text-transform:uppercas
 .pl-cap{flex:1;min-width:0;display:flex;align-items:center;gap:1rem 1.6rem;flex-wrap:wrap}
 .pl-cap>*{animation:pl-in .55s cubic-bezier(.2,.8,.2,1) both}
 .pl-cap-t{min-width:0}
-.pl-title{display:block;font:700 clamp(1.3rem,1rem + 1.2vw,2rem)/1.1 var(--f-display);text-transform:uppercase;text-shadow:.035em .035em 0 var(--sh1),.07em .07em 0 var(--sh2),.105em .105em 0 var(--sh3)}
+.pl-title{display:block;font:700 clamp(1.3rem,1rem + 1.2vw,2rem)/1.1 var(--f-sans);text-transform:none;letter-spacing:-.01em;text-shadow:none}
 .pl-sub{display:block;margin-top:.3rem;font-size:.95rem;color:var(--pl-muted);max-width:46ch}
 .pl-count{font:600 .9rem/1 var(--f-sans);letter-spacing:.14em;color:var(--pl-muted);white-space:nowrap}
 .pl-count b{color:var(--ink);font-weight:600}
