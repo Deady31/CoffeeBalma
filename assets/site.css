@@ -778,7 +778,7 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;text-transform:uppercas
 .menu-pop a{font-family:var(--f-display);text-transform:uppercase;font-size:1.5rem}
 .lb-top b{font-family:var(--f-display);text-transform:uppercase;font-size:1.35rem;text-shadow:none}
 .quiz h2,.ticket .q-title,.result h3{--sh1:#e8975a;--sh2:#c4783d;--sh3:#8a5222}
-.ticket h3{text-shadow:.035em .035em 0 var(--sh1),.07em .07em 0 var(--sh2)}
+.ticket h3{text-shadow:none;letter-spacing:-.01em}
 .point .big,.price,.roast-temp,.range-row .val,.timer .t,.timer .w,.recap strong,.board dd,.plan label b,.stepper output,.result .recipe b,.recipe-l dd,.lb-w,.ti-big,.rail-mark b,.wheel .hubtxt,.sb-hud button b{font-family:var(--f-display);font-weight:400}
 .point .big{font-size:clamp(3.4rem,2rem + 4.6vw,6.4rem);text-shadow:.03em .03em 0 var(--sh2),.06em .06em 0 var(--sh3)}
 .price{font-size:2.5rem}
