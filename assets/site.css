@@ -751,9 +751,9 @@ input[type=range]::-moz-range-thumb{width:10px;height:30px;border-radius:0;backg
 /* ===== Typographie : Matcha World en titres majuscules, ombrés ; Simply Olive pour le reste ===== */
 html{font-size:110%}
 body{font-size:1.0625rem;line-height:1.55}
-h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;text-transform:uppercase;letter-spacing:.015em;line-height:1.1;text-shadow:.035em .035em 0 var(--sh1),.07em .07em 0 var(--sh2),.105em .105em 0 var(--sh3),.14em .14em .12em rgba(0,0,0,.45)}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;text-transform:uppercase;letter-spacing:.005em;line-height:1.04;text-shadow:none}
 .h2{font-size:clamp(2.2rem,1.2rem + 3.4vw,4.4rem);line-height:1.08;padding-top:.04em}
-.hero-word{font-size:min(10.5vw,19svh);line-height:.98;text-shadow:.04em .04em 0 var(--sh1),.08em .08em 0 var(--sh2),.12em .12em 0 var(--sh3),.16em .16em .14em rgba(0,0,0,.5)}
+.hero-word{font-size:min(10.5vw,19svh);line-height:.94;letter-spacing:-.02em;text-shadow:0 2px 30px rgba(0,0,0,.55)}
 .hero-word .b{padding-left:1.1em;color:var(--crema)}
 .hero-outro h2{font-size:clamp(2.2rem,1.2rem + 3.6vw,4.6rem);max-width:15ch}
 .bleed h2{font-size:clamp(2.2rem,1rem + 3.8vw,4.8rem);max-width:17ch;line-height:1.1}
@@ -1263,3 +1263,87 @@ html.cb-arrive body::after{content:"";position:fixed;inset:0;z-index:299;backgro
 }
 
 @media (max-width:700px){.fb{width:calc(var(--s)*.6)}.fb:nth-child(n+8){display:none}.hero-word .b{padding-left:.5em}}
+
+/* ============================================================
+   REFONTE 2026-11 — cohérence du système visuel (desktop first)
+   ------------------------------------------------------------------
+   Constat : deux directions cohabitaient. Les boutons avaient déjà
+   basculé en plat/éditorial (cuivre, angles vifs), alors que les
+   titres portaient encore une extrusion 3D à 4 couches et que les
+   cartes gardaient des dégradés de verre. Résultat : le site se
+   contredisait et paraissait bricolé.
+   Parti pris : on assume le plat. Typographie éditoriale, cuivre
+   comme seul accent, aucun effet de relief.
+   ============================================================ */
+
+/* 1. Contraste : le texte secondaire était trop clair sur photo */
+:root{--mute:#bda78c;--ink-soft:#ddcbb2}
+
+/* 2. Cartes : plus de verre, un aplat et une ligne. Cohérent avec les boutons */
+.card,.plan,.point,.roast-pick button,.otab,.chip{
+  background:var(--bg-2);
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+  box-shadow:none;
+  border:1px solid var(--line)
+}
+.card:hover,.plan:hover{border-color:var(--line-s)}
+
+/* 3. Rythme vertical : une seule échelle d'espacement */
+main>section{padding-block:var(--section)}
+main>section+section{padding-top:0}
+
+/* 4. Hero : le vide avant le message était trop grand.
+   On resserre, et on remonte le prix dans le premier écran. */
+.hero-intro{gap:clamp(.55rem,1.4svh,.95rem);padding-bottom:clamp(1.5rem,4svh,2.5rem)}
+.hero-word{max-width:14ch}
+.hero-tag{max-width:38ch;font-size:clamp(1rem,.92rem + .35vw,1.2rem);color:var(--ink-soft)}
+.hero-price{order:2;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-top:.35rem}
+.hero-price strong{font-family:var(--f-display);font-size:clamp(1.4rem,1.1rem + 1vw,2rem);color:var(--crema);letter-spacing:.01em}
+
+/* 5. Titres de section : un seul niveau de hiérarchie lisible */
+.h2,.bleed h2{letter-spacing:-.01em}
+.story h2,.bleed h2,.h2{text-wrap:balance}
+
+/* 6. Accessibilité : un état de focus visible partout */
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{
+  outline:2px solid var(--copper);outline-offset:3px;border-radius:0
+}
+
+/* 7. États de survol cohérents sur les liens de navigation */
+.nav-d a,.menu-pop a{position:relative;transition:color .2s}
+.nav-d a:hover,.menu-pop a:hover{color:var(--crema)}
+
+/* 8. Le bandeau d'engagements : séparateurs discrets plutôt que des boîtes */
+.assure ul{gap:0}
+.assure li+li{border-left:1px solid var(--line);padding-left:clamp(1rem,2vw,2rem)}
+
+/* ------------------------------------------------------------
+   REFONTE 2026-11 (2/2) — la typographie
+   La police d'affichage MatchaWorld a un relief 3D dessiné DANS
+   les lettres : aucune ombre CSS ne peut l'enlever. C'est elle
+   qui donne l'effet « WordArt » daté, pas le text-shadow.
+   On passe donc les titres sur Butler, la serif déjà chargée :
+   même famille artisanale, mais éditoriale et intemporelle.
+   ------------------------------------------------------------ */
+h1,h2,h3,h4,.hero-word,.h2,.foot-word{
+  font-family:var(--f-sans);
+  font-weight:700;
+  letter-spacing:-.015em;
+  text-transform:none
+}
+.hero-word{
+  font-size:min(11vw,17svh);
+  line-height:.92;
+  letter-spacing:-.035em;
+  text-shadow:0 4px 40px rgba(0,0,0,.6)
+}
+.hero-word .b{color:var(--crema);font-style:italic;padding-left:.35em}
+.bleed h2,.hero-outro h2,.story h2,.h2{text-transform:none;letter-spacing:-.02em}
+
+/* Le premier écran doit dire quoi, combien, et où cliquer,
+   sans attendre la fin de l'animation de scroll. */
+.motion .hero-word .w>span{transform:none!important;opacity:1!important}
+.hero-intro{opacity:1!important}
+.hero-lot{color:var(--ink-soft)}
+.hero-lot b{color:var(--crema)}
+.hero-tag{color:var(--ink-soft)}

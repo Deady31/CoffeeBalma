@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Coffee Balma — proposition de hero</title>
+<style>
+  @font-face{font-family:Butler;src:url("fonts/butler-Rmn.woff2") format("woff2");font-weight:400;font-display:swap}
+  :root{
+    --bg:#110905; --ink:#f4ead9; --ink-soft:#ddcbb2; --mute:#bda78c;
+    --crema:#f2c98f; --copper:#e8975a; --line:rgba(244,234,217,.16);
+    --serif:Butler,"Iowan Old Style",Palatino,Georgia,serif;
+    --gutter:clamp(32px,5vw,72px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1440px;height:900px;overflow:hidden;background:var(--bg);color:var(--ink);
+       font-family:var(--serif);position:relative}
+
+  /* fond : le grain, avec un voile pour la lisibilité */
+  .bg{position:absolute;inset:0;background:url("images/opt/grain.jpg") center/cover no-repeat}
+  .bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(100deg,rgba(17,9,5,.94) 0%,rgba(17,9,5,.78) 46%,rgba(17,9,5,.35) 100%)}
+
+  header{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;
+         padding:22px var(--gutter);border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:12px;font-size:17px;letter-spacing:.14em;text-transform:uppercase}
+  .brand img{width:42px;height:42px;border-radius:50%}
+  nav{display:flex;gap:34px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .cta-top{background:var(--copper);color:#1a0f09;padding:12px 22px;font-size:13px;
+           letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+
+  main{position:relative;z-index:3;display:grid;grid-template-columns:1.15fr .85fr;
+       gap:64px;align-items:center;padding:0 var(--gutter);height:calc(900px - 87px)}
+
+  .kicker{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.22em;
+          text-transform:uppercase;color:var(--mute);margin-bottom:26px}
+  .kicker::before{content:"";width:44px;height:1px;background:var(--copper);display:block}
+
+  h1{font-size:112px;line-height:.86;letter-spacing:-.035em;font-weight:400}
+  h1 em{font-style:italic;color:var(--crema);display:block}
+
+  .tag{font-size:22px;line-height:1.45;color:var(--ink-soft);max-width:30ch;margin-top:30px}
+
+  .actions{display:flex;align-items:center;gap:18px;margin-top:38px}
+  .btn-main{background:var(--copper);color:#1a0f09;padding:18px 30px;font-size:15px;
+            letter-spacing:.1em;text-transform:uppercase;font-weight:700;text-decoration:none}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);padding:18px 26px;font-size:15px;
+             letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+  .price{display:flex;align-items:baseline;gap:12px;margin-top:28px;
+         padding-top:24px;border-top:1px solid var(--line);max-width:420px}
+  .price b{font-size:34px;color:var(--crema);font-weight:400}
+  .price span{font-size:14px;color:var(--mute);letter-spacing:.04em}
+  .fiction{font-size:11px;color:rgba(189,167,140,.6);margin-top:18px;letter-spacing:.08em}
+
+  /* colonne droite : le sachet + le tampon */
+  .right{position:relative;display:flex;align-items:center;justify-content:center;height:100%}
+  .pack{width:300px;filter:drop-shadow(0 40px 70px rgba(0,0,0,.65))}
+  .stamp{display:none}
+  .lot{position:absolute;left:0;top:120px;font-size:12px;letter-spacing:.14em;
+       text-transform:uppercase;color:var(--mute);display:flex;align-items:center;gap:10px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--copper);display:block}
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+
+  <header>
+    <div class="brand"><img src="images/opt/logo-s.jpg" alt="">Coffee Balma</div>
+    <nav><span>Savoir-faire</span><span>Cafés</span><span>Préparer</span><span>Origines</span><span>Abonnement</span></nav>
+    <a class="cta-top" href="#">Je m'abonne</a>
+  </header>
+
+  <main>
+    <div>
+      <p class="kicker">Torréfié à Balma · fournées de 6 kg</p>
+      <h1>Coffee<em>Balma</em></h1>
+      <p class="tag">Du café en grains torréfié à la commande. Un sachet par mois, dans votre boîte aux lettres sous 48 h.</p>
+      <div class="actions">
+        <a class="btn-main" href="#">Je m'abonne</a>
+        <a class="btn-ghost" href="#">Voir les trois cafés</a>
+      </div>
+      <div class="price"><b>9,90 €</b><span>les 250 g · sans engagement</span></div>
+      <p class="fiction">Marque, prix et atelier fictifs : démonstration.</p>
+    </div>
+
+    <div class="right">
+      <img class="pack" src="images/opt/pack-aube.webp" alt="">
+      
+      <p class="lot"><span class="dot"></span>Fournée du jour · sortie à 10 h 42</p>
+    </div>
+  </main>
+</body>
+</html>
