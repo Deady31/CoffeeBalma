@@ -7,10 +7,7 @@
 <title>Abonnement | Coffee Balma</title>
 <meta name="description" content="Composez votre boîte Coffee Balma : un, deux ou quatre sachets par mois, sans engagement (démonstration, rien n'est envoyé).">
 <link rel="icon" href="images/opt/logo-s.jpg" type="image/jpeg">
-<link rel="preload" as="image" href="images/opt/logo-s.jpg" fetchpriority="high">
-<link rel="preload" href="fonts/matcha-world.otf" as="font" type="font/otf" crossorigin>
-<link rel="preload" href="fonts/butler-Rmn.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/barlowc-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <script>
 (function(){var r=document.documentElement;r.classList.add('js');
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('motion');}})();
@@ -44,7 +41,7 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('mot
     <div class="sub-top">
       <h1 class="h2" id="sub-h">Composez votre boîte</h1>
       <p class="sub-lead">Un sachet par mois ou plus, un café ou un mélange. Le carton se remplit pendant que vous choisissez.</p>
-      <ul class="assure-row"><li>Sans engagement</li><li>Résiliable avant chaque envoi</li><li>Torréfié à la commande</li><li>Envoi sous 48 h</li></ul>
+      <ul class="assure-row"><li>Sans engagement</li><li>Résiliable avant chaque envoi</li><li>Torréfié à la commande</li><li>Livraison offerte, envoi sous 48 h</li></ul>
     </div>
     <div class="resume" id="resume" hidden>
       <p><b>Vous aviez commencé une boîte.</b> <span id="resume-text"></span></p>
@@ -56,7 +53,7 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('mot
               <svg id="box-svg" viewBox="140 430 1700 1430" aria-hidden="true" focusable="false">
                 <defs>
                   <radialGradient id="bx-sh"><stop offset="0" stop-color="#000" stop-opacity=".6"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
-                  <clipPath id="bx-front"><path clip-rule="evenodd" d="M0 0H2000V2000H0Z M373 1011L833 924L1613 987L1247 1107Z"/></clipPath>
+                  <clipPath id="bx-front"><path d="M0 1011H373L1247 1107L1613 987H2000V2000H0Z"/></clipPath>
                   <clipPath id="bx-logo"><circle r="92"/></clipPath>
                 </defs>
                 <ellipse cx="1010" cy="1836" rx="860" ry="74" fill="url(#bx-sh)"/>
@@ -76,8 +73,8 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('mot
             <fieldset style="border:0;margin:0;padding:0;min-width:0"><legend class="step-h">1. Choisissez votre formule</legend>
               <div class="plans" id="plans">
                 <div class="plan"><input type="radio" name="plan" id="plan1" value="1"><label for="plan1"><b>1</b><span>sachet</span><em>9,90 € par mois</em></label></div>
-                <div class="plan"><span class="plan-flag">Le plus choisi</span><input type="radio" name="plan" id="plan2" value="2" checked><label for="plan2"><b>2</b><span>sachets</span><em>18,80 € par mois</em></label></div>
-                <div class="plan"><input type="radio" name="plan" id="plan4" value="4"><label for="plan4"><b>4</b><span>sachets</span><em>36,00 € par mois</em></label></div>
+                <div class="plan"><span class="plan-flag">Le plus choisi</span><input type="radio" name="plan" id="plan2" value="2" checked><label for="plan2"><b>2</b><span>sachets</span><em>18,80 € par mois</em><small>9,40 € le sachet · −5 %</small></label></div>
+                <div class="plan"><input type="radio" name="plan" id="plan4" value="4"><label for="plan4"><b>4</b><span>sachets</span><em>36,00 € par mois</em><small>9,00 € le sachet · −9 %</small></label></div>
               </div></fieldset>
             <h2 class="step-h" style="margin-top:1.6rem">2. Remplissez la boîte</h2>
             <div class="mix" id="mix"></div>
@@ -86,7 +83,7 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('mot
 
             <div class="form-card">
               <h2 class="step-h">3. Vos coordonnées</h2>
-              <p class="hint"><b>Démonstration :</b> rien n'est envoyé ni enregistré. N'écrivez pas vos vraies coordonnées.</p>
+              <p class="hint"><b>Démonstration :</b> rien n'est envoyé : seule la composition de la boîte reste dans ce navigateur. N'écrivez pas vos vraies coordonnées.</p>
               <div class="form-grid">
                 <div class="field"><label for="f-name">Prénom</label><input type="text" id="f-name" name="prenom" autocomplete="off" aria-describedby="e-name"><p class="err" id="e-name">Indiquez un prénom, par exemple Camille.</p></div>
                 <div class="field"><label for="f-mail">Adresse e-mail</label><input type="email" id="f-mail" name="mail" autocomplete="off" placeholder="prenom@exemple.fr" aria-describedby="e-mail"><p class="err" id="e-mail">Saisissez une adresse du type prenom@exemple.fr.</p></div>
@@ -95,7 +92,7 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('mot
                 <div class="field"><div class="check"><input type="checkbox" id="f-ok" aria-describedby="e-ok"><label for="f-ok" style="margin:0;font-weight:400;font-size:.95rem">J'ai compris que ce site est une démonstration, sans commande réelle.</label></div><p class="err" id="e-ok">Cochez la case pour continuer.</p></div>
               </div>
               <div class="recap" aria-live="polite"><span>Total par mois</span><strong class="tabnum" id="recap-total">18,80 €</strong></div>
-              <div class="form-actions"><button class="btn btn-main btn-block" type="submit">Je m'abonne <svg aria-hidden="true"><use href="#arrow"/></svg></button><ul class="trust"><li>Sans engagement</li><li>Résiliable avant chaque envoi</li><li>Torréfié à la commande</li></ul><p class="small-print">Sans engagement. Résiliable avant chaque envoi. Prix fictifs.</p></div>
+              <div class="form-actions"><button class="btn btn-main btn-block" type="submit">Je m'abonne <svg aria-hidden="true"><use href="#arrow"/></svg></button><ul class="trust"><li>Sans engagement</li><li>Résiliable avant chaque envoi</li><li>Torréfié à la commande</li><li>Livraison offerte</li></ul><p class="small-print">Sans engagement. Résiliable avant chaque envoi. Prix fictifs.</p></div>
             </div>
           </div>
           <div class="done" id="done" role="status" tabindex="-1">
@@ -103,13 +100,14 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('mot
             <h2>Bienvenue, <span id="done-name"></span></h2>
             <p id="done-text"></p>
             <ol class="next" id="next-steps"></ol>
-            <p class="fiction">Rien n'a été envoyé ni enregistré : ce site est une démonstration.</p>
+            <p class="fiction">Rien n'a été envoyé : ce site est une démonstration.</p>
+            <div class="manage"><h3>Et ensuite ?</h3><ul><li><b>Un e-mail de confirmation</b> récapitule votre boîte (démonstration : rien n'est envoyé).</li><li><b>Gérer ou mettre en pause</b> : avant chaque envoi, vous changez de café ou de formule, ou vous suspendez, sans frais.</li><li><b>Parrainer un ami</b> : son premier sachet est offert, le suivant l'est pour vous (idée de démonstration).</li></ul></div>
             <div class="done-actions"><a class="btn btn-main" href="index.html" data-wipe>Retour à l'accueil</a><button class="btn btn-line" type="button" id="done-reset">Composer une autre boîte</button></div>
           </div>
         </form>
         <div class="label-wrap"><h2 class="step-h">Aperçu de votre étiquette</h2>
         <div class="label" id="bag-label">
-          <div class="lb-top"><img src="images/opt/logo-s.jpg" width="54" height="54" alt=""><div><b id="lb-cafe">Le Zénith</b><span id="lb-origin">Colombie, Huila</span></div><span class="lb-w">250 g</span></div>
+          <div class="lb-top"><img src="images/opt/logo-s.jpg" width="54" height="54" alt=""><div><b id="lb-cafe">Crépuscule</b><span id="lb-origin">Colombie, Huila</span></div><span class="lb-w">250 g</span></div>
           <dl class="lb-rows" id="lb-rows"></dl>
           <div class="lb-tabs" id="lb-tabs" role="group" aria-label="Étiquette d'un autre café de la boîte"></div>
           <div class="lb-bars" aria-hidden="true"></div>
@@ -125,10 +123,11 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('mot
     <div class="faq">
       <details><summary>Puis-je arrêter quand je veux ?</summary><p>Oui. L'abonnement est sans engagement. Vous pouvez le suspendre ou l'arrêter avant le prochain envoi, sans frais.</p></details>
       <details><summary>Sous quel délai mon café part-il ?</summary><p>Sous 48 h après votre commande. Les fournées sont de 6 kg : le café ne dort pas en stock.</p></details>
+      <details><summary>La livraison est-elle payante ?</summary><p>Non. Elle est offerte (condition fictive de démonstration), quelle que soit la formule.</p></details>
       <details><summary>Puis-je changer de café d'un mois à l'autre ?</summary><p>Oui. Vous recomposez votre boîte avant chaque envoi : un seul café, ou un mélange des trois.</p></details>
     </div>
     <div class="proof-notes">
-      <figure class="proof-note"><blockquote>« Je pensais ne pas aimer le café filtre. Avec L'Aube, j'ai senti l'orange avant de boire. »</blockquote><figcaption>Camille, 31 ans, Toulouse <span class="sample">Exemple fictif</span></figcaption></figure>
+      <figure class="proof-note"><blockquote>« Je pensais ne pas aimer le café filtre. Avec Soleil Levant, j'ai senti l'orange avant de boire. »</blockquote><figcaption>Camille, 31 ans, Toulouse <span class="sample">Exemple fictif</span></figcaption></figure>
       <figure class="proof-note"><blockquote>« Il tient face au lait sans devenir plat. Je règle ma machine à 18 g et ça sort bien du premier coup. »</blockquote><figcaption>Yanis, 28 ans, Balma <span class="sample">Exemple fictif</span></figcaption></figure>
     </div>
   </div>
